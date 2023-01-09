@@ -1,6 +1,8 @@
 package com.lti.springboot.demo.controller;
 
-import org.springframework.stereotype.Component;
+import java.util.Arrays;
+import java.util.List;
+
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -11,7 +13,7 @@ public class HelloController {
 //	http://localhost:9090/hello
 
 	@RequestMapping("/hello")
-	public String hello() {	
+	public String hello() {
 		System.out.println("Hello");
 		return "Hello world!";
 	}
@@ -21,8 +23,11 @@ public class HelloController {
 		System.out.println("Hi");
 		return "Hi! How are you?";
 	}
-	
-	// 
-	
-	
+
+	@RequestMapping("/friends")
+	public List<String> friends() {
+		System.out.println("Friends");
+		return Arrays.asList("Sonu", "Monu", "Tonu");
+	}
+
 }
