@@ -18,11 +18,15 @@ public class HelloController {
 		return "Hello world!";
 	}
 
+//	http://localhost:9090/hi
+
 	@RequestMapping("/hi")
 	public String hi() {
 		System.out.println("Hi");
 		return "Hi! How are you?";
 	}
+
+//	http://localhost:9090/friends
 
 	@RequestMapping("/friends")
 	public List<String> friends() {
