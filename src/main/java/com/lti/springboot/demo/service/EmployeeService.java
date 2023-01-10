@@ -32,7 +32,6 @@ public class EmployeeService implements IEmployeeService {
 		LOG.info(Integer.toString(employeeId));
 		Optional<Employee> empOptional = empRepository.findById(employeeId);
 		return empOptional.get();
-
 	}
 
 	@Override
