@@ -1,7 +1,12 @@
 package com.lti.springboot.demo.model;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+@Entity
 public class Employee {
 
+	@Id
 	private int employeeId;
 	private String firstName;
 	private double salary;
