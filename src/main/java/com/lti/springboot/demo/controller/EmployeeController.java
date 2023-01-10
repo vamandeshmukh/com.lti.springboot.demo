@@ -9,7 +9,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.lti.springboot.demo.model.Employee;
-import com.lti.springboot.demo.service.EmployeeService;
 import com.lti.springboot.demo.service.IEmployeeService;
 
 @RestController
