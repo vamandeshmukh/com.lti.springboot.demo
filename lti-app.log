@@ -726,3 +726,37 @@ Consider defining a bean of type 'com.lti.springboot.demo.service.EmployeeServic
 2023-01-10 12:18:08.978  INFO 7164 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9090 (http) with context path ''
 2023-01-10 12:18:08.979  INFO 7164 --- [restartedMain] com.lti.springboot.demo.Application      : Started Application in 0.099 seconds (JVM running for 6154.091)
 2023-01-10 12:18:08.979  INFO 7164 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2023-01-10 12:25:49.438  INFO 7164 --- [http-nio-9090-exec-1] o.a.c.c.C.[Tomcat-1].[localhost].[/]     : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-01-10 12:25:49.438  INFO 7164 --- [http-nio-9090-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-01-10 12:25:49.439  INFO 7164 --- [http-nio-9090-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2023-01-10 12:25:49.440  INFO 7164 --- [http-nio-9090-exec-1] c.l.s.d.controller.EmployeeController    : getAllEmps
+2023-01-10 12:25:49.442  INFO 7164 --- [http-nio-9090-exec-1] c.l.s.demo.service.EmployeeService       : [Employee [employeeId=101, firstName=Sonu, salary=90000.0], Employee [employeeId=102, firstName=Monu, salary=99000.0], Employee [employeeId=103, firstName=Tonu, salary=95000.0]]
+2023-01-10 12:38:33.959  INFO 7164 --- [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 3 class path changes (0 additions, 0 deletions, 3 modifications)
+2023-01-10 12:38:33.970  INFO 7164 --- [Thread-198] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2023-01-10 12:38:33.970  INFO 7164 --- [Thread-198] o.a.c.c.C.[Tomcat-1].[localhost].[/]     : Destroying Spring FrameworkServlet 'dispatcherServlet'
+2023-01-10 12:38:35.769  INFO 7164 --- [restartedMain] com.lti.springboot.demo.Application      : Starting Application using Java 17.0.3 on VAMUX with PID 7164 (D:\VamanPro\Codes\Eclipse_WS4\com.lti.springboot.demo\target\classes started by DELL in D:\VamanPro\Codes\Eclipse_WS4\com.lti.springboot.demo)
+2023-01-10 12:38:35.769  INFO 7164 --- [restartedMain] com.lti.springboot.demo.Application      : No active profile set, falling back to 1 default profile: "default"
+2023-01-10 12:38:35.817  INFO 7164 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9090 (http)
+2023-01-10 12:38:35.817  INFO 7164 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-01-10 12:38:35.817  INFO 7164 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.70]
+2023-01-10 12:38:35.828  INFO 7164 --- [restartedMain] o.a.c.c.C.[Tomcat-1].[localhost].[/]     : Initializing Spring embedded WebApplicationContext
+2023-01-10 12:38:35.828  INFO 7164 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 58 ms
+2023-01-10 12:38:35.860  INFO 7164 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2023-01-10 12:38:35.866  INFO 7164 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9090 (http) with context path ''
+2023-01-10 12:38:35.867  INFO 7164 --- [restartedMain] com.lti.springboot.demo.Application      : Started Application in 0.105 seconds (JVM running for 7380.98)
+2023-01-10 12:38:35.868  INFO 7164 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2023-01-10 12:38:45.360  INFO 7164 --- [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 11 class path changes (0 additions, 0 deletions, 11 modifications)
+2023-01-10 12:38:45.391  INFO 7164 --- [Thread-206] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2023-01-10 12:38:45.435  INFO 7164 --- [restartedMain] com.lti.springboot.demo.Application      : Starting Application using Java 17.0.3 on VAMUX with PID 7164 (D:\VamanPro\Codes\Eclipse_WS4\com.lti.springboot.demo\target\classes started by DELL in D:\VamanPro\Codes\Eclipse_WS4\com.lti.springboot.demo)
+2023-01-10 12:38:45.436  INFO 7164 --- [restartedMain] com.lti.springboot.demo.Application      : No active profile set, falling back to 1 default profile: "default"
+2023-01-10 12:38:45.496  INFO 7164 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9090 (http)
+2023-01-10 12:38:45.496  INFO 7164 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-01-10 12:38:45.497  INFO 7164 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.70]
+2023-01-10 12:38:45.503  INFO 7164 --- [restartedMain] o.a.c.c.C.[Tomcat-1].[localhost].[/]     : Initializing Spring embedded WebApplicationContext
+2023-01-10 12:38:45.504  INFO 7164 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 68 ms
+2023-01-10 12:38:45.520  INFO 7164 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2023-01-10 12:38:45.524  INFO 7164 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9090 (http) with context path ''
+2023-01-10 12:38:45.526  INFO 7164 --- [restartedMain] com.lti.springboot.demo.Application      : Started Application in 0.097 seconds (JVM running for 7390.638)
+2023-01-10 12:38:45.526  INFO 7164 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2023-01-10 12:40:18.081  INFO 7164 --- [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2023-01-10 12:40:18.092  INFO 7164 --- [Thread-210] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
