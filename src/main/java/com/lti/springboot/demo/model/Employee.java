@@ -18,14 +18,16 @@ public class Employee {
 	// PostGRE
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 
-	// custom sequence in PostGRE
-//	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "emp_sq")
-//    @SequenceGenerator(name="your_custom_sequence", sequenceName = "emp_sq", allocationSize=1) 
-// SQL: CREATE SEQUENCE emp_sq START WITH 1010 INCREMENT BY 10;
-
 	// MySQL
 //	@GenericGenerator(name = "emp_seq", strategy = "increment")
 //	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "emp_seq")
+
+//	How to generate custom values for PK column?
+//  custom sequence in PostGRE
+//	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "emp_sq")
+//  @SequenceGenerator(name="your_custom_sequence", sequenceName = "emp_sq", allocationSize=1) 
+//  SQL: CREATE SEQUENCE emp_sq START WITH 1010 INCREMENT BY 10;
+
 	private int employeeId;
 
 	@Column(name = "first_name")
