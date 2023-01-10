@@ -1,6 +1,5 @@
 package com.lti.springboot.demo.service;
 
-//import java.util.ArrayList;
 import java.util.List;
 
 import org.slf4j.Logger;
@@ -22,6 +21,7 @@ public class EmployeeService implements IEmployeeService {
 
 	@Override
 	public List<Employee> getAllEmployees() {
+//		empRepository.
 		List<Employee> empList = empRepository.findAll();
 		LOG.info(Integer.toString(empList.size()));
 		return empList;
