@@ -31,6 +31,7 @@ public class EmployeeService implements IEmployeeService {
 	public Employee getEmployeeById(int employeeId) {
 		LOG.info(Integer.toString(employeeId));
 		Optional<Employee> empOptional = empRepository.findById(employeeId);
+		// what if the eid does not exist?
 		return empOptional.get();
 	}
 
@@ -43,12 +44,14 @@ public class EmployeeService implements IEmployeeService {
 	@Override
 	public Employee updateEmployee(Employee employee) {
 		LOG.info(employee.toString());
+		// does the given eid exist?
 		return empRepository.save(employee);
 	}
 
 	@Override
 	public Employee deleteEmployee(int employeeId) {
 		LOG.info(Integer.toString(employeeId));
+		// does the given eid exist?
 		empRepository.deleteById(employeeId);
 		return null;
 	}
