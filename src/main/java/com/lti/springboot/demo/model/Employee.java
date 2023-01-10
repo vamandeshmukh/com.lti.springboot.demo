@@ -17,19 +17,25 @@ public class Employee {
 	@Column(name = "employee_id")
 	// PostGRE
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	// MySQL 
+	// MySQL
 //	@GenericGenerator(name = "emp_seq", strategy = "increment")
 //	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "emp_seq")
 	private int employeeId;
-	
+
 	@Column(name = "first_name")
 	private String firstName;
-	
+
 	@Column(name = "salary")
 	private double salary;
 
 	public Employee() {
 		super();
+	}
+
+	public Employee(String firstName, double salary) {
+		super();
+		this.firstName = firstName;
+		this.salary = salary;
 	}
 
 	public Employee(int employeeId, String firstName, double salary) {

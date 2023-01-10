@@ -39,6 +39,7 @@ public class EmployeeService implements IEmployeeService {
 
 	@Override
 	public Employee addEmployee(Employee employee) {
+		LOG.info(employee.toString());
 		return empRepository.save(employee);
 	}
 
