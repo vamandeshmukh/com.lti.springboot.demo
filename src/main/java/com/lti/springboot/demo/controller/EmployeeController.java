@@ -15,7 +15,7 @@ import com.lti.springboot.demo.service.IEmployeeService;
 public class EmployeeController {
 
 	private final Logger LOG = LoggerFactory.getLogger(this.getClass());
-	
+
 	@Autowired
 	private IEmployeeService empService;
 
@@ -25,6 +25,9 @@ public class EmployeeController {
 		return empService.getAllEmployees();
 	}
 
+	@RequestMapping("get-emp-by-id")
+	public Employee getEmpById() {
+		LOG.info("getEmpById");
+		return empService.getEmployeeById(101);
+	}
 }
-
-

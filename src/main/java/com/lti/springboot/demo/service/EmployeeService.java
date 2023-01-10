@@ -1,6 +1,7 @@
 package com.lti.springboot.demo.service;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -25,6 +26,14 @@ public class EmployeeService implements IEmployeeService {
 		List<Employee> empList = empRepository.findAll();
 		LOG.info(Integer.toString(empList.size()));
 		return empList;
+	}
+
+	@Override
+	public Employee getEmployeeById(int employeeId) { // 101 
+		Optional<Employee> empOptional = empRepository.findById(employeeId);
+		// code 
+		return empOptional.get();
+				
 	}
 
 }
