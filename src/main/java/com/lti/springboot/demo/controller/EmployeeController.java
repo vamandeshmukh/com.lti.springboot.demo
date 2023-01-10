@@ -47,8 +47,8 @@ public class EmployeeController {
 //	}
 
 	@RequestMapping(path = "add-emp", method = RequestMethod.POST, consumes = { "application/json" }, produces = {
-			"application/json" })
-
+			"application/json" }) 
+//@PostMapping("add-emp") // this also works to the basic
 	public ResponseEntity<Employee> addEmp(@RequestBody Employee employee) {
 		Employee emp = empService.addEmployee(employee);
 		HttpStatus status = HttpStatus.CREATED;
