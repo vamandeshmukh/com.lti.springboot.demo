@@ -2,7 +2,11 @@ package com.lti.springboot.demo.controller;
 
 import java.util.List;
 
+import org.springframework.http.HttpHeaders;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -20,6 +24,8 @@ import com.lti.springboot.demo.service.IEmployeeService;
 @RequestMapping("emp")
 public class EmployeeController {
 
+//	http://localhost:9090/swagger-ui/index.html
+
 	@Autowired
 	private IEmployeeService empService;
 
@@ -34,10 +40,22 @@ public class EmployeeController {
 		return empService.getEmployeeById(employeeId);
 	}
 
+//	@RequestMapping(path = "add-emp", method = RequestMethod.POST, consumes = { "application/json" }, produces = {
+//			"application/json" })
+//	public Employee addEmp(@RequestBody Employee employee) {
+//		return empService.addEmployee(employee);
+//	}
+
 	@RequestMapping(path = "add-emp", method = RequestMethod.POST, consumes = { "application/json" }, produces = {
 			"application/json" })
-	public Employee addEmp(@RequestBody Employee employee) {
-		return empService.addEmployee(employee);
+
+	public ResponseEntity<Employee> addEmp(@RequestBody Employee employee) {
+		Employee emp = empService.addEmployee(employee);
+		HttpStatus status = HttpStatus.CREATED;
+		HttpHeaders headers = new HttpHeaders();
+		headers.add("message", "Employee with eid " + emp.getEmployeeId() + " added successfully.");
+		ResponseEntity<Employee> response = new ResponseEntity<>(emp, headers, status);
+		return response;
 	}
 
 	@PutMapping("update-emp")
