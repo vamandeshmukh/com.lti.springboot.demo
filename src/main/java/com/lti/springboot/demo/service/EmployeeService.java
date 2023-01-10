@@ -30,7 +30,8 @@ public class EmployeeService implements IEmployeeService {
 
 	@Override
 	public Employee getEmployeeById(int employeeId) { // 101 
-		Optional<Employee> empOptional = empRepository.findById(employeeId);
+		Optional<Employee> empOptional 
+		= empRepository.findById(employeeId);
 		// code 
 		return empOptional.get();
 				
