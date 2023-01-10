@@ -37,6 +37,11 @@ public class EmployeeService implements IEmployeeService {
 				
 	}
 
+	@Override
+	public Employee addEmployee(Employee employee) {
+		return empRepository.save(employee);
+	}
+
 }
 
 //package com.lti.springboot.demo.service;

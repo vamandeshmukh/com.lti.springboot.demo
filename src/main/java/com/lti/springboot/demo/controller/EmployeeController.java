@@ -6,6 +6,9 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
@@ -28,16 +31,16 @@ public class EmployeeController {
 		return empService.getAllEmployees();
 	}
 
-	@RequestMapping("get-emp-by-id")
-	public Employee getEmpById() {
+	@GetMapping("get-emp-by-id/{eid}")
+	public Employee getEmpById(@PathVariable(name = "eid") int employeeId) {
 		LOG.info("getEmpById");
-		return empService.getEmployeeById(101);
+		return empService.getEmployeeById(employeeId);
+	}
+
+	@PostMapping("add-emp")
+	public Employee addEmp(@RequestBody Employee employee) {
+		return empService.addEmployee(employee);
 	}
 }
-
-
-
-
-
 
 

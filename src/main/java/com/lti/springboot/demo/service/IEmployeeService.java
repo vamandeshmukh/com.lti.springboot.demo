@@ -10,7 +10,7 @@ public interface IEmployeeService {
 
 	public abstract Employee getEmployeeById(int employeeId);
 //
-//	public abstract Employee addEmployee(Employee employee);
+	public abstract Employee addEmployee(Employee employee);
 //
 //	public abstract Employee updateEmployee(Employee employee);
 //
