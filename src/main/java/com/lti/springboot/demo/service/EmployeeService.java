@@ -22,25 +22,36 @@ public class EmployeeService implements IEmployeeService {
 
 	@Override
 	public List<Employee> getAllEmployees() {
-//		empRepository.
 		List<Employee> empList = empRepository.findAll();
 		LOG.info(Integer.toString(empList.size()));
 		return empList;
 	}
 
 	@Override
-	public Employee getEmployeeById(int employeeId) { // 101 
-		Optional<Employee> empOptional 
-		= empRepository.findById(employeeId);
-		// code 
+	public Employee getEmployeeById(int employeeId) {
+		LOG.info(Integer.toString(employeeId));
+		Optional<Employee> empOptional = empRepository.findById(employeeId);
 		return empOptional.get();
-				
+
 	}
 
 	@Override
 	public Employee addEmployee(Employee employee) {
 		LOG.info(employee.toString());
 		return empRepository.save(employee);
+	}
+
+	@Override
+	public Employee updateEmployee(Employee employee) {
+		LOG.info(employee.toString());
+		return empRepository.save(employee);
+	}
+
+	@Override
+	public Employee deleteEmployee(int employeeId) {
+		LOG.info(Integer.toString(employeeId));
+		empRepository.deleteById(employeeId);
+		return null;
 	}
 
 }
