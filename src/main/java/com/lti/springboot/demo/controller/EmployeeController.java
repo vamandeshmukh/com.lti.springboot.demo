@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.lti.springboot.demo.model.Employee;
 import com.lti.springboot.demo.service.EmployeeService;
+import com.lti.springboot.demo.service.IEmployeeService;
 
 @RestController
 public class EmployeeController {
@@ -17,7 +18,7 @@ public class EmployeeController {
 	private final Logger LOG = LoggerFactory.getLogger(this.getClass());
 	
 	@Autowired
-	private EmployeeService empService;
+	private IEmployeeService empService;
 
 	@RequestMapping("get-all-emps")
 	public List<Employee> getAllEmps() {
