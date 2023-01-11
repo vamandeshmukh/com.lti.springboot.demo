@@ -7,6 +7,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.Size;
 
 @Entity
 //@Table(name = "emp_table", schema = "lti")
@@ -34,6 +35,7 @@ public class Employee {
 	@Column(name = "first_name")
 
 	@NotEmpty(message = "firstName must not be empty")
+	@Size(max = 32, min = 6, message = "Size of firstName should be between 6 and 32")
 	private String firstName;
 
 	@Column(name = "salary")
