@@ -10,6 +10,8 @@ public interface IEmployeeService {
 
 	public abstract Employee getEmployeeById(int employeeId);
 
+	public abstract List<Employee> getEmployeeBySalaryGreaterThan(double salary);
+
 	public abstract Employee addEmployee(Employee employee);
 
 	public abstract Employee updateEmployee(Employee employee);

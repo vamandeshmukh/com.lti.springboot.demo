@@ -36,6 +36,11 @@ public class EmployeeService implements IEmployeeService {
 	}
 
 	@Override
+	public List<Employee> getEmployeeBySalaryGreaterThan(double salary) {
+		return empRepository.findBySalaryGreaterThan(salary);
+	}
+
+	@Override
 	public Employee addEmployee(Employee employee) {
 		LOG.info(employee.toString());
 		return empRepository.save(employee);
