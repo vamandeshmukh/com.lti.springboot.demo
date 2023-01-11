@@ -8,6 +8,8 @@ public interface IEmployeeService {
 
 	public abstract List<Employee> getAllEmployees();
 
+	public abstract List<Employee> getAllEmployees(int page, int size, String sort);
+
 	public abstract Employee getEmployeeById(int employeeId);
 
 	public abstract List<Employee> getEmployeeBySalaryGreaterThan(double salary);

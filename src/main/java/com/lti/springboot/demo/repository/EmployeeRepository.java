@@ -20,8 +20,8 @@ public interface EmployeeRepository extends JpaRepository<Employee, Integer> {
 
 	public abstract List<Employee> findBySalaryGreaterThan(double salary);
 
-//	@Query("SELECT Employee e where e.firstName = firstName")
-	@Query("select e from Employee e where e.firstName = ?1")
+//	@Query("select e from Employee e where e.firstName = firstName") // use JPQL 
+	@Query("select e from Employee e where e.firstName = ?1") // use JPQL 
 	public abstract List<Employee> findByFirstName(String firstName);
 
 	// public abstract List<Employee> findBySalaryLessThan(double salary);
@@ -30,6 +30,17 @@ public interface EmployeeRepository extends JpaRepository<Employee, Integer> {
 //	
 //	public abstract List<Employee> findBySalary(double salary);
 
-	// xpose apis based on PK values
+	// xpose apis based on PK values ?
+
+//	==================
+//	paging and sorting 
+//	==================
+	
+	
+
+	
+	
+	
+	
 
 }

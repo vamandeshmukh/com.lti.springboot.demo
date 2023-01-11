@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.lti.springboot.demo.model.Employee;
@@ -34,6 +35,15 @@ public class EmployeeController {
 //	@GetMapping("get-all-emps") // same as above 
 	public ResponseEntity<List<Employee>> getAllEmps() {
 		List<Employee> empList = empService.getAllEmployees();
+		HttpStatus status = HttpStatus.OK;
+		ResponseEntity<List<Employee>> response = new ResponseEntity<>(empList, status);
+		return response;
+	}
+
+	@RequestMapping(path = "get-emps", method = RequestMethod.GET)
+	public ResponseEntity<List<Employee>> getEmps(@RequestParam(defaultValue = "10") int page,
+			@RequestParam(defaultValue = "10") int size, @RequestParam(defaultValue = "employeeId") String sort) {		
+		List<Employee> empList = empService.getAllEmployees(page, size, sort);
 		HttpStatus status = HttpStatus.OK;
 		ResponseEntity<List<Employee>> response = new ResponseEntity<>(empList, status);
 		return response;

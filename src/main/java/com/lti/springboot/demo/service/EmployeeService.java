@@ -6,6 +6,10 @@ import java.util.Optional;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import com.lti.springboot.demo.model.Employee;
@@ -27,6 +31,12 @@ public class EmployeeService implements IEmployeeService {
 		return empList;
 	}
 
+	public List<Employee> getAllEmployees(int page, int size, String sort) {
+		Pageable pageable = PageRequest.of(page, size, Sort.by(sort));
+		Page<Employee> empPage = empRepository.findAll(pageable);
+		return empPage.getContent();
+	}
+
 	@Override
 	public Employee getEmployeeById(int employeeId) {
 		LOG.info(Integer.toString(employeeId));
@@ -44,6 +54,7 @@ public class EmployeeService implements IEmployeeService {
 	public List<Employee> getEmployeeByFirstName(String firstName) {
 		return empRepository.findByFirstName(firstName);
 	}
+
 	@Override
 	public Employee addEmployee(Employee employee) {
 		LOG.info(employee.toString());
