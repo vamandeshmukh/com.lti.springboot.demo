@@ -7,15 +7,13 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-import lombok.ToString;
-
 @Entity
 @Table(name = "dept_table")
 //@AllArgsConstructor
 //@NoArgsConstructor
 //@Getter
 //@Setter
-@ToString
+//@ToString
 public class Department {
 
 	@Id
