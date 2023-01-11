@@ -24,5 +24,7 @@ public interface EmployeeRepository extends JpaRepository<Employee, Integer> {
 	public abstract List<Employee> findBySalaryLessThan(double salary);
 
 	public abstract List<Employee> findBySalaryBetween(double fromSalary, double toSalary);
+	
+	// xpose apis based on PK values 
 
 }
