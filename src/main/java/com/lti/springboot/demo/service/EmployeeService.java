@@ -12,6 +12,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
+import com.lti.springboot.demo.exception.EmployeeNotFoundExcetion;
 import com.lti.springboot.demo.model.Employee;
 import com.lti.springboot.demo.repository.EmployeeRepository;
 
@@ -38,11 +39,17 @@ public class EmployeeService implements IEmployeeService {
 	}
 
 	@Override
-	public Employee getEmployeeById(int employeeId) {
+	public Employee getEmployeeById(int employeeId) { // 101
 		LOG.info(Integer.toString(employeeId));
 		Optional<Employee> empOptional = empRepository.findById(employeeId);
-		// what if the eid does not exist?
-		return empOptional.get();
+		if (empOptional.isPresent())
+			return empOptional.get();
+		else {
+			String errorMessage = "Employee with " + employeeId + " is not found.";
+			LOG.error(errorMessage);
+			throw new EmployeeNotFoundExcetion(errorMessage);
+		}
+
 	}
 
 	@Override
@@ -71,9 +78,9 @@ public class EmployeeService implements IEmployeeService {
 	@Override
 	public Employee deleteEmployee(int employeeId) {
 		LOG.info(Integer.toString(employeeId));
-		// does the given eid exist?
+		Employee emp = this.getEmployeeById(employeeId);
 		empRepository.deleteById(employeeId);
-		return null;
+		return emp;
 	}
 
 }
