@@ -10,7 +10,8 @@ Spring REST Guide: https://spring.io/guides/gs/rest-service/
 Spring Data JPA Doc: https://docs.spring.io/spring-data/jpa/docs/current/reference/html/
 Spring Data JPA guide: https://spring.io/guides/gs/accessing-data-jpa/
 Spring Security Doc: https://docs.spring.io/spring-security/reference/index.html  
-
+Spring Caching Doc: https://docs.spring.io/spring-framework/docs/current/reference/html/integration.html#cache-annotations 
+Spring paging and sorting: https://docs.spring.io/spring-data/rest/docs/current/reference/html/#paging-and-sorting 
 
 
 # e-Shopping Project 

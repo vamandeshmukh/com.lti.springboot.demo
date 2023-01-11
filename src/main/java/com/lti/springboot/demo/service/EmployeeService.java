@@ -66,6 +66,7 @@ public class EmployeeService implements IEmployeeService {
 			String errorMessage = "No employees exist.";
 			LOG.error(errorMessage);
 			throw new EmployeeNotFoundExcetion(errorMessage);
+//			throw new RuntimeException(errorMessage);
 		}
 	}
 

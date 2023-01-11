@@ -19,13 +19,11 @@ import com.lti.springboot.demo.model.Employee;
 public class GLobalExceptionHandler extends ResponseEntityExceptionHandler {
 
 	@ExceptionHandler(EmployeeNotFoundExcetion.class)
-	public ResponseEntity<Object> handleEmployeeNotFoundException(EmployeeNotFoundExcetion e) {
-
+	public ResponseEntity<Employee> handleEmployeeNotFoundException(EmployeeNotFoundExcetion e) {
 		HttpHeaders headers = new HttpHeaders();
 		headers.add("message", e.getMessage());
-
-		return new ResponseEntity<Object>(null, headers, HttpStatus.NOT_FOUND);
-
+		HttpStatus status = HttpStatus.NOT_FOUND;
+		return new ResponseEntity<Employee>(null, headers, status);
 	}
 
 	@Override
@@ -33,8 +31,11 @@ public class GLobalExceptionHandler extends ResponseEntityExceptionHandler {
 			HttpStatus status, WebRequest request) {
 		List<String> details = new ArrayList<>();
 		for (ObjectError error : ex.getBindingResult().getAllErrors()) {
+			System.out.println(error.getDefaultMessage());
 			details.add(error.getDefaultMessage());
 		}
+		System.out.println(details);
 		return new ResponseEntity<Object>(details, HttpStatus.BAD_REQUEST);
 	}
+
 }
