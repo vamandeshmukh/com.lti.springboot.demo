@@ -2,6 +2,8 @@ package com.lti.springboot.demo.controller;
 
 import java.util.List;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
@@ -67,7 +69,7 @@ public class EmployeeController {
 	@RequestMapping(path = "add-emp", method = RequestMethod.POST, consumes = { "application/json" }, produces = {
 			"application/json" })
 //@PostMapping("add-emp") // this also works to the basic
-	public ResponseEntity<Employee> addEmp(@RequestBody Employee employee) {
+	public ResponseEntity<Employee> addEmp(@Valid @RequestBody Employee employee) {
 		Employee emp = empService.addEmployee(employee);
 		HttpStatus status = HttpStatus.CREATED;
 		HttpHeaders headers = new HttpHeaders();

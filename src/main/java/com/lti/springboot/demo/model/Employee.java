@@ -6,10 +6,11 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.validation.constraints.NotEmpty;
 
 @Entity
 //@Table(name = "emp_table", schema = "lti")
-@Table(name = "emp_table")
+@Table(name = "emp_table_2")
 public class Employee {
 
 	@Id
@@ -31,6 +32,8 @@ public class Employee {
 	private int employeeId;
 
 	@Column(name = "first_name")
+
+	@NotEmpty(message = "firstName must not be empty")
 	private String firstName;
 
 	@Column(name = "salary")
