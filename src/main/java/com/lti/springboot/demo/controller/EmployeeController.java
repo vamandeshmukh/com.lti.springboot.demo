@@ -26,7 +26,6 @@ public class EmployeeController {
 //	http://localhost:9090/swagger-ui/index.html
 
 //	@Autowired
-//	private ResponseEntity<Object> response;
 
 	@Autowired
 	private IEmployeeService empService;
@@ -46,12 +45,6 @@ public class EmployeeController {
 		ResponseEntity<Employee> response = new ResponseEntity<>(emp, HttpStatus.OK);
 		return response;
 	}
-
-//	@RequestMapping(path = "add-emp", method = RequestMethod.POST, consumes = { "application/json" }, produces = {
-//			"application/json" })
-//	public Employee addEmp(@RequestBody Employee employee) {
-//		return empService.addEmployee(employee);
-//	}
 
 	@RequestMapping(path = "add-emp", method = RequestMethod.POST, consumes = { "application/json" }, produces = {
 			"application/json" })
