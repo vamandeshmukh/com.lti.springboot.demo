@@ -39,6 +39,14 @@ public class EmployeeController {
 		return response;
 	}
 
+	@RequestMapping(path = "get-emps-by-salary/{sal}", method = RequestMethod.GET)
+	public ResponseEntity<List<Employee>> getEmpsBySal(@PathVariable(name = "sal") double salary) {
+		List<Employee> empList = empService.getEmployeeBySalaryGreaterThan(salary);
+		HttpStatus status = HttpStatus.OK;
+		ResponseEntity<List<Employee>> response = new ResponseEntity<>(empList, status);
+		return response;
+	}
+
 	@GetMapping("get-emp-by-id/{eid}")
 	public ResponseEntity<Employee> getEmpById(@PathVariable(name = "eid") int employeeId) {
 		Employee emp = empService.getEmployeeById(employeeId);
