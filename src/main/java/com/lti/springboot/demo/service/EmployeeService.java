@@ -59,7 +59,14 @@ public class EmployeeService implements IEmployeeService {
 
 	@Override
 	public List<Employee> getEmployeeByFirstName(String firstName) {
-		return empRepository.findByFirstName(firstName);
+		List<Employee> empList = empRepository.findByFirstName(firstName);
+		if (!empList.isEmpty())
+			return empList;
+		else {
+			String errorMessage = "No employees exist.";
+			LOG.error(errorMessage);
+			throw new EmployeeNotFoundExcetion(errorMessage);
+		}
 	}
 
 	@Override
@@ -71,7 +78,7 @@ public class EmployeeService implements IEmployeeService {
 	@Override
 	public Employee updateEmployee(Employee employee) {
 		LOG.info(employee.toString());
-		// does the given eid exist?
+		this.getEmployeeById(employee.getEmployeeId());
 		return empRepository.save(employee);
 	}
 

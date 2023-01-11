@@ -19,13 +19,12 @@ import com.lti.springboot.demo.model.Employee;
 public class GLobalExceptionHandler extends ResponseEntityExceptionHandler {
 
 	@ExceptionHandler(EmployeeNotFoundExcetion.class)
-	public ResponseEntity<Employee> 
-	handleEmployeeNotFoundException(EmployeeNotFoundExcetion e) {
+	public ResponseEntity<Object> handleEmployeeNotFoundException(EmployeeNotFoundExcetion e) {
 
 		HttpHeaders headers = new HttpHeaders();
 		headers.add("message", e.getMessage());
 
-		return new ResponseEntity<Employee>(null, headers, HttpStatus.NOT_FOUND);
+		return new ResponseEntity<Object>(null, headers, HttpStatus.NOT_FOUND);
 
 	}
 
