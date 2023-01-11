@@ -6,6 +6,7 @@ import java.util.Optional;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
@@ -26,6 +27,7 @@ public class EmployeeService implements IEmployeeService {
 	EmployeeRepository empRepository;
 
 	@Override
+	@Cacheable(value = "empCache")
 	public List<Employee> getAllEmployees() {
 		List<Employee> empList = empRepository.findAll();
 		LOG.info(Integer.toString(empList.size()));
