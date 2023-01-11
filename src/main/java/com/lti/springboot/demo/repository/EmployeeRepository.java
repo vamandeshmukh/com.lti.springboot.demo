@@ -3,6 +3,7 @@ package com.lti.springboot.demo.repository;
 import java.util.List;
 
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
 import com.lti.springboot.demo.model.Employee;
@@ -17,14 +18,18 @@ public interface EmployeeRepository extends JpaRepository<Employee, Integer> {
 
 //	public abstract List<EntityClass> findByFieldName(type fieldName);
 
-	public abstract List<Employee> findBySalary(double salary);
-
 	public abstract List<Employee> findBySalaryGreaterThan(double salary);
 
-	public abstract List<Employee> findBySalaryLessThan(double salary);
+//	@Query("SELECT Employee e where e.firstName = firstName")
+	@Query("select e from Employee e where e.firstName = ?1")
+	public abstract List<Employee> findByFirstName(String firstName);
 
-	public abstract List<Employee> findBySalaryBetween(double fromSalary, double toSalary);
-	
-	// xpose apis based on PK values 
+	// public abstract List<Employee> findBySalaryLessThan(double salary);
+//
+//	public abstract List<Employee> findBySalaryBetween(double fromSalary, double toSalary);
+//	
+//	public abstract List<Employee> findBySalary(double salary);
+
+	// xpose apis based on PK values
 
 }

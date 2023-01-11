@@ -12,6 +12,8 @@ public interface IEmployeeService {
 
 	public abstract List<Employee> getEmployeeBySalaryGreaterThan(double salary);
 
+	public abstract List<Employee> getEmployeeByFirstName(String firstName);
+
 	public abstract Employee addEmployee(Employee employee);
 
 	public abstract Employee updateEmployee(Employee employee);

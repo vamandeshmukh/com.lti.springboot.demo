@@ -41,6 +41,10 @@ public class EmployeeService implements IEmployeeService {
 	}
 
 	@Override
+	public List<Employee> getEmployeeByFirstName(String firstName) {
+		return empRepository.findByFirstName(firstName);
+	}
+	@Override
 	public Employee addEmployee(Employee employee) {
 		LOG.info(employee.toString());
 		return empRepository.save(employee);
