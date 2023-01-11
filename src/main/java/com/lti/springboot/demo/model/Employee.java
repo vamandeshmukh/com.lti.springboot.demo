@@ -5,13 +5,15 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.Size;
 
 @Entity
 //@Table(name = "emp_table", schema = "lti")
-@Table(name = "emp_table_2")
+@Table(name = "emp_table")
 public class Employee {
 
 	@Id
@@ -40,6 +42,10 @@ public class Employee {
 
 	@Column(name = "salary")
 	private double salary;
+
+	@ManyToOne
+	@JoinColumn(name = "departmentId")
+	private Department department;
 
 	public Employee() {
 		super();
