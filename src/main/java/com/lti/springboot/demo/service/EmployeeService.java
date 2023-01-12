@@ -63,7 +63,7 @@ public class EmployeeService implements IEmployeeService {
 	}
 
 	@Override
-	public List<Employee> getEmployeeByFirstName(String firstName) {
+	public List<Employee> getEmployeeByFirstName(String firstName) throws RuntimeException {
 		List<Employee> empList = empRepository.findByFirstName(firstName);
 		if (!empList.isEmpty())
 			return empList;

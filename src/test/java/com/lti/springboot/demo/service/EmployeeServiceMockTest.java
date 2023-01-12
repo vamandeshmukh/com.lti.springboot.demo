@@ -2,6 +2,7 @@ package com.lti.springboot.demo.service;
 
 //import org.junit.jupiter.api.Assertions;
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.mockito.Mockito.timeout;
 import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
@@ -66,5 +67,11 @@ public class EmployeeServiceMockTest {
 		empServ.getAllEmployees();
 		empServ.getAllEmployees();
 		verify(empRepo, times(3)).findAll();
+	}
+
+	@Test
+	void testGetAllEmployees3() {
+		empServ.getAllEmployees();
+//		verify(empRepo, times(3))timeout(3000).
 	}
 }

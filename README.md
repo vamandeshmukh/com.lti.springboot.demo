@@ -12,6 +12,10 @@ Spring Data JPA guide: https://spring.io/guides/gs/accessing-data-jpa/
 Spring Security Doc: https://docs.spring.io/spring-security/reference/index.html  
 Spring Caching Doc: https://docs.spring.io/spring-framework/docs/current/reference/html/integration.html#cache-annotations 
 Spring paging and sorting: https://docs.spring.io/spring-data/rest/docs/current/reference/html/#paging-and-sorting 
+JUnit: https://junit.org/junit5/docs/current/user-guide/#writing-tests-annotations 
+Mockito: https://site.mockito.org/  
+
+
 
 
 # e-Shopping Project 
