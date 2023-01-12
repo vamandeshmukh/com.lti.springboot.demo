@@ -55,13 +55,13 @@ public class EmployeeServiceMockTest {
 	}
 
 	@Test
-	public void testGetAllEmployees() {
+	void testGetAllEmployees() {
 		assertEquals(empServ.getAllEmployees().size(), 3);
 //		Assertions.assertEquals(10, 5 + 5);
 	}
 
 	@Test
-	public void testGetAllEmployees2() {
+	void testGetAllEmployees2() {
 		empServ.getAllEmployees();
 		empServ.getAllEmployees();
 		empServ.getAllEmployees();
