@@ -9,6 +9,10 @@ import static org.mockito.Mockito.when;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.junit.jupiter.api.AfterAll;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
@@ -29,21 +33,35 @@ public class EmployeeServiceMockTest {
 	@InjectMocks
 	EmployeeService empServ;
 
-	@Test
-	public void testGetAllEmployees() {
+	@BeforeAll
+	static void setUpBeforeClass() throws Exception {
+	}
+
+	@AfterAll
+	static void tearDownAfterClass() throws Exception {
+	}
+
+	@BeforeEach
+	void setUp() throws Exception {
 		List<Employee> empList = new ArrayList<>();
 		empList.add(new Employee());
 		empList.add(new Employee());
 		empList.add(new Employee());
 		when(empRepo.findAll()).thenReturn(empList);
+	}
+
+	@AfterEach
+	void tearDown() throws Exception {
+	}
+
+	@Test
+	public void testGetAllEmployees() {
 		assertEquals(empServ.getAllEmployees().size(), 3);
 //		Assertions.assertEquals(10, 5 + 5);
 	}
 
 	@Test
 	public void testGetAllEmployees2() {
-		List<Employee> empList = new ArrayList<>();
-		when(empRepo.findAll()).thenReturn(empList);
 		empServ.getAllEmployees();
 		empServ.getAllEmployees();
 		empServ.getAllEmployees();
