@@ -30,7 +30,7 @@ public class EmployeeServiceMockTest {
 	EmployeeService empServ;
 
 	@Test
-	public void testGetAllEmployees() {		
+	public void testGetAllEmployees() {
 		List<Employee> empList = new ArrayList<>();
 		empList.add(new Employee());
 		empList.add(new Employee());
@@ -41,7 +41,7 @@ public class EmployeeServiceMockTest {
 	}
 
 	@Test
-	public void testGetAllEmployees2() {		
+	public void testGetAllEmployees2() {
 		List<Employee> empList = new ArrayList<>();
 		when(empRepo.findAll()).thenReturn(empList);
 		empServ.getAllEmployees();
@@ -50,4 +50,3 @@ public class EmployeeServiceMockTest {
 		verify(empRepo, times(3)).findAll();
 	}
 }
-
