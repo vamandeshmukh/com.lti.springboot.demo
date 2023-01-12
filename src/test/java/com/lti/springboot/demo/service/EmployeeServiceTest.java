@@ -11,6 +11,8 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
+import com.lti.springboot.demo.model.Employee;
+
 @SpringBootTest
 class EmployeeServiceTest {
 
@@ -40,18 +42,8 @@ class EmployeeServiceTest {
 	}
 
 	@Test
-	void testGetAllEmployeesIntIntString() {
-
-	}
-
-	@Test
 	void testGetEmployeeById() {
-
-	}
-
-	@Test
-	void testGetEmployeeBySalaryGreaterThan() {
-
+		assertEquals(2, empService.getEmployeeById(2));
 	}
 
 	@Test
@@ -61,7 +53,7 @@ class EmployeeServiceTest {
 
 	@Test
 	void testAddEmployee() {
-
+		assertEquals("Sonu", empService.addEmployee(new Employee("Sonu", 90000)));
 	}
 
 	@Test
