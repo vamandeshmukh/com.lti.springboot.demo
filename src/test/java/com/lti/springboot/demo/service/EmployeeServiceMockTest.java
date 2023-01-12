@@ -2,7 +2,6 @@ package com.lti.springboot.demo.service;
 
 //import org.junit.jupiter.api.Assertions;
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.mockito.Mockito.timeout;
 import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
@@ -27,6 +26,8 @@ import com.lti.springboot.demo.repository.EmployeeRepository;
 @SpringBootTest
 @ExtendWith(MockitoExtension.class)
 public class EmployeeServiceMockTest {
+
+//	Quick guide: https://site.mockito.org/ 
 
 	@MockBean
 	EmployeeRepository empRepo;

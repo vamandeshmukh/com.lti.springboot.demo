@@ -1,11 +1,18 @@
 package com.lti.springboot.demo.model;
 
+import java.time.LocalDateTime;
+import java.util.Date;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+
+import org.springframework.data.annotation.CreatedDate;
 
 @Entity
 @Table(name = "dept_table")
@@ -27,6 +34,12 @@ public class Department {
 	@Column(name = "city")
 	private String city;
 
+//	see main class 
+	@Column(name = "created_on", nullable = false, updatable = false)
+	@Temporal(TemporalType.TIMESTAMP)
+	@CreatedDate
+//	private Date createdOn;
+	private LocalDateTime createdOn;
 	public Department() {
 		super();
 	}
