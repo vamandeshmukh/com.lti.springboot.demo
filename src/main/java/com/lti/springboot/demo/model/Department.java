@@ -34,16 +34,6 @@ public class Department {
 	@Column(name = "city")
 	private String city;
 
-//	see main class 
-	@Column(name = "created_on", nullable = false, updatable = false)
-	@Temporal(TemporalType.TIMESTAMP)
-	@CreatedDate
-//	private Date createdOn;
-	private LocalDateTime createdOn;
-	public Department() {
-		super();
-	}
-
 	public Department(int departmentId, String departmentName, String city) {
 		super();
 		this.departmentId = departmentId;
